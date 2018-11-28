@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ratelimit-svc
+  annotations:
+    getambassador.io/config: |
+      apiVersion: ambassador/v0
+      kind: RateLimitService
+      name: ratelimit
+      service: "ratelimit-svc:8081"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8081
+    name: grpc
+    protocol: TCP
+  - port: 8080
+    name: http
+    protocol: TCP
+  - port: 6070
+    name: debug
+    protocol: TCP
+  selector:
+    service: ambassador-ratelimit

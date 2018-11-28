@@ -1,5 +1,5 @@
 # kubernetes-ambassador-lyft-ratelimit
-Helm charts to deploy lyft's ratelimit (https://github.com/lyft/ratelimit) to kubernetes
+Helm charts to deploy lyft's ratelimit (https://github.com/lyft/ratelimit) to minikube
 
 Steps: 
 1. Follow Ambassador Documentation to setup: https://www.getambassador.io/user-guide/getting-started
