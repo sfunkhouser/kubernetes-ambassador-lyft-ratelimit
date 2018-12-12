@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ratelimit-config
+data:
+  config_ip.yaml: |
+    domain: ambassador # domain must be ambassador
+    descriptors:
+      - key: remote_address # rate limit ips at 5 per minute
+        rate_limit:
+          unit: minute
+          requests_per_unit: 5
